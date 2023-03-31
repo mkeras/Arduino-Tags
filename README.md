@@ -6,10 +6,10 @@
 This class provides an abstraction for handling tags in an Arduino environment. Tags are used to represent values of different data types that may be read from or written to various devices or sensors. The ArduinoBasicTag class provides a simple interface for managing and interacting with these tags.
 
 ### Features
--Supports multiple data types (int, float, bool, and String)
--Provides optional write functions for writable tags
--Keeps track of the previous tag value to identify value changes
--Handles Sparkplug data types and their codes
+- Supports multiple data types (int, float, bool, and String)
+- Provides optional write functions for writable tags
+- Keeps track of the previous tag value to identify value changes
+- Handles Sparkplug data types and their codes
 
 ### Example Usage
 ```cpp
