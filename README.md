@@ -3,7 +3,7 @@
 
 
 ## ArduinoBasicTag
-The ArduinoBasicTag class provides an easy-to-use interface for creating and managing tags for various data types in Arduino applications and to be used with the Sparkplug B protocol. The class encapsulates the functionality of reading and writing tag values, and basic detecting of changes in tag values. It is designed to be simple and extensible.
+The ArduinoBasicTag class provides an easy-to-use interface for creating and managing tags for various data types in Arduino applications, specifically to be combined with a Sparkplug B protocol library. The class encapsulates the functionality of reading and writing tag values, and basic detecting of changes in tag values. It is designed to be simple and extensible. It uses function pointers for reading and writing the tag values, allowing for virtually any type of underlying data source to be used (memory, io, etc).
 
 ### Features
 - Supports multiple data types: int, double, bool, and String.
