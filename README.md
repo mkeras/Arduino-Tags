@@ -16,81 +16,16 @@ The ArduinoBasicTag class provides an easy-to-use interface for creating and man
 - Designed with simplicity in mind, making it easy for developers to integrate and maintain in their projects.
 - Reading, writing, getting values, and tag change detection are all performed explicitly, allowing users to control the timing and frequency of these operations as needed, per tag. This provides flexibility in adapting the class to various use cases and performance requirements.
 
-### Example Usage
-```cpp
-#include "ArduinoBasicTag.h"
 
-int readTemperature() {
-  // Read temperature from a sensor
-}
+### Getting Started
+#### Prerequisites
+- Arduino IDE or PlatformIO IDE
+- Basic understanding of C++ programming and Arduino development
 
-bool writeLEDStatus(bool status) {
-  // Set LED status
-}
+### Installation
+1. Download the ArduinoTag.h and ArduinoTag.cpp files.
+2. Include the files in your Arduino project by adding them to your project's source directory.
 
-ArduinoBasicTag temperatureTag("Temperature", 1, readTemperature);
-ArduinoBasicTag ledStatusTag("LED Status", 2, []() { return digitalRead(LED_PIN); }, writeLEDStatus);
-
-void setup() {
-  // Initialize your Arduino setup
-}
-
-void loop() {
-  // Read and process tag values
-  delay();
-  temperatureTag.read();
-  ledStatusTag.read();
-  
-  if (temperatureTag.valueChanged()) {
-    Serial.print("Temperature: ");
-    Serial.println(temperatureTag.getFloatValue());
-  }
-
-  if (ledStatusTag.valueChanged()) {
-    Serial.print("LED Status: ");
-    Serial.println(ledStatusTag.getBoolValue() ? "ON" : "OFF");
-  }
-}
-```
-
-## Methods
-
-### Constructors
-```cpp
-ArduinoBasicTag(const char* name, int alias, int (*read_func)(), bool (*write_func)(int) = nullptr);
-ArduinoBasicTag(const char* name, int alias, float (*read_func)(), bool (*write_func)(float) = nullptr);
-ArduinoBasicTag(const char* name, int alias, bool (*read_func)(), bool (*write_func)(bool) = nullptr);
-ArduinoBasicTag(const char* name, int alias, String (*read_func)(), bool (*write_func)(String) = nullptr);
-```
-
-### Getters
-```cpp
-const char* getName() const;
-int getAlias() const;
-bool isNull() const;
-bool isWritable() const;
-bool valueChanged();
-SparkplugDataType getDataType();
-int getDataTypeCode();
-```
-
-### Value Getters
-```cpp
-int getIntValue();
-float getFloatValue();
-bool getBoolValue();
-String getStringValue();
-```
-
-### Read function
-```cpp
-bool read();
-```
-
-### Write function (optional)
-```cpp
-bool write(int value);
-bool write(float value);
-bool write(bool value);
-bool write(String value);
-```
+### Usage
+1. Include the header file
+Include the ArduinoTag.h header file in your main Arduino sketch:
